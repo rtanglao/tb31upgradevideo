@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+<script>
+      // ensure the web page (DOM) has loaded
+      document.addEventListener("DOMContentLoaded", function () {
+
+         // Create a popcorn instance by calling Popcorn("#id-of-my-video")
+         var pop = Popcorn("#tb31video");
+
+         // add a footnote at 2 seconds, and remove it at 6 seconds
+         pop.footnote({
+           start: 1,
+           end: 4,
+           text: '<a href="http://blog.mozilla.com/roland/">Roland Tanglao, Thunderbird Support Lead</a>',
+           target: "footnotediv"
+         });
+         pop.footnote({
+           start: 5,
+           end: 10,
+           text: '<a href="http://mozilla.org/thunderbird/">Mozilla Thunderbird website</a>',
+           target: "footnotediv"
+         });
+         pop.footnote({
+           start: 11,
+           end: 16,
+           text: '<a href="http://blog.mozilla.com/thunderbird/2012/01/31/using-thunderbird-3-1-its-time-for-a-change/">Thunderbird 3.1 End of Life April 20112</a>',
+           target: "footnotediv"
+         });
+
+         // play the video right away
+         pop.play();
+
+      }, false);
+</script>
+</head>
+<body>
+<video height="1024" width="768" id="tb31video">
+<source src="tb31-tb11-upgrade.webm">
+</video>
+<div id="footnotediv"></div>
+</body>
+</html>
